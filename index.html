@@ -263,10 +263,14 @@
   <script>
     // Registrasi Service Worker untuk PWA
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js").then(() => {
-        console.log("Service Worker terdaftar");
-      }).catch((err) => {
-        console.warn("SW gagal:", err);
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js", { scope: "./" })
+          .then((reg) => {
+            console.log("Service Worker terdaftar di scope:", reg.scope);
+          })
+          .catch((err) => {
+            console.warn("SW gagal:", err);
+          });
       });
     }
   </script>
