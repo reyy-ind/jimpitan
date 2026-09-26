@@ -1,12 +1,12 @@
-const CACHE_NAME = "jimpitan-v2";
+const CACHE_NAME = "jimpitan-v4";
 const ASSETS = [
   "./",
   "./index.html",
   "./style.css",
   "./app.js",
   "./manifest.json",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "./icon-192.png",
+  "./icon-512.png"
 ];
 
 // Install — cache shell assets
