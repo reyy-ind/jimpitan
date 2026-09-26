@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function generateIcon(size, filename) {
+  const c = document.createElement("canvas");
+  c.width = size; c.height = size;
+  const ctx = c.getContext("2d");
+
+  // Background hijau
+  ctx.fillStyle = "#1F5A44";
+  ctx.fillRect(0, 0, size, size);
+
+  // Emoji lampion
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.font = `${size * 0.55}px serif`;
+  ctx.fillText("🏮", size / 2, size / 2);
+
+  const link = document.createElement("a");
+  link.download = filename;
+  link.href = c.toDataURL("image/png");
+  link.click();
+}
+
+generateIcon(192, "icon-192.png");
+setTimeout(() => generateIcon(512, "icon-512.png"), 500);
+</script>
+<p>Mengunduh ikon... Setelah selesai, pindahkan file ke folder <b>icons/</b></p>
+</body>
+</html>
